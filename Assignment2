@@ -1,0 +1,43 @@
+class Solution{
+
+    static int maxSubarrayXOR(int N, int arr[]){
+        // code here
+         int ans = Integer.MIN_VALUE; // Initialize result
+     
+        // Pick starting points of subarrays
+        for (int i=0; i<n; i++)
+        {
+                // to store xor of current subarray  
+            int curr_xor = 0;
+     
+            // Pick ending points of subarrays starting with i
+            for (int j=i; j<n; j++)
+            {
+                curr_xor = curr_xor ^ arr[j];
+                ans = Math.max(ans, curr_xor);
+            }
+        }
+        return ans;
+    }
+
+
+
+
+
+    // Driver program to test above functions
+    public static void main(String args[])
+    {
+           Scanner s=new Scanner(System.in);
+     System.out.println("Enter no of elements");
+     int n=s.nextInt();
+     for(int i=0;i<n;i++)
+     arr[i]=s.nextInt();
+       
+        int n = arr.length;
+       
+        System.out.println("Max subarray XOR is " +
+                                 maxSubarrayXOR(arr, n));
+    }
+}
+
+
